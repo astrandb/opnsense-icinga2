@@ -94,10 +94,10 @@ else {
   }
   else {
     if ($resp["updates"] == "1") {
-      terminate(STATE_WARNING, "WARNING: " . $resp['updates'] . "Update available");
+      terminate(STATE_WARNING, "WARNING: There is " . $resp['updates'] . " update available");
     }
     else {
-      terminate(STATE_WARNING, "WARNING: " . $resp['updates'] . "Updates available");
+      terminate(STATE_WARNING, "WARNING: There are " . $resp['updates'] . " updates available");
     }
   }
 }
