@@ -88,6 +88,9 @@ else {
     terminate(STATE_UNKNOWN, "Status fetch failed: ". $return);
   }
 //var_dump($resp);
+  if (array_key_exists("upgrade_major_version", $resp) && !empty($resp['upgrade_major_version'])) {
+    terminate(STATE_WARNING, "WARNING: Major upgrade available: " . $resp['upgrade_major_version']);
+  }
   if ($resp["updates"] == "0") {
     $ver = explode("-", $resp["product_version"]);
     terminate(STATE_OK, "OK: No updates available - Current version: " . $ver[0]);
