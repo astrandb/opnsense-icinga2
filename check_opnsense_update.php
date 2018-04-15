@@ -41,7 +41,6 @@ if (array_key_exists("s", $options)) {
 } else {
   $http = "http://";
 }
-$http = "https://";
 
 if (array_key_exists("H", $options)) {
   $host = $options["H"];
@@ -68,7 +67,7 @@ if ($debug) echo $url . "\n";
 
 $ch = curl_init($url);
 
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($ch, CURLOPT_USERPWD, "$key:$secret");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
