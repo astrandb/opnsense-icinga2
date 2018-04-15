@@ -86,7 +86,7 @@ else {
   if (is_null($resp)) {
     terminate(STATE_UNKNOWN, "Status fetch failed: ". $return);
   }
-//var_dump($resp);
+  if ($debug) var_dump($resp);
   if (array_key_exists("upgrade_major_version", $resp) && !empty($resp['upgrade_major_version'])) {
     terminate(STATE_WARNING, "WARNING: Major upgrade available: " . $resp['upgrade_major_version']);
   }
